@@ -27,7 +27,7 @@ $kumpulan_nilai = [$nilai1, $nilai2, $nilai3, $nilai4];
     <div class="container">
         <h1 class="text-center">Daftar Nilai Siswa</h1>
         <table class="table">
-            <thead class="thead-dark">
+            <thead class="thead-primary">
                 <tr>
                     <th scope="col">No</th>
                     <th scope="col">NIM</th>
