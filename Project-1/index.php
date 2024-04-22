@@ -1,30 +1,59 @@
-<?php 
-
-	$nama = "Muhamad Nur Raply";
-	$jurusan = "Teknik Informatika";
-	$semester = 2;
-	$sudahlulus = false; 
-
+<?php
+require_once 'header.php';
+require_once 'sidebar.php';
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-</head>
-<body>
-	<h2><?php echo $nama ?></h2>
-	<p>
-		Hai nama saya <?php echo $nama ?>
-	</p>
-	<p>
-		Saya kuliah di jurusan <?php echo $jurusan ?>
-	</p>
-	<p>
-		Saat ini saya berada di semester <?php echo $semester ?>
-	</p>
-	<p> Saya Belum lulus <?php echo $sudahlulus ?> </p>
-</body>
-</html>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Dashboard Website</h1>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Default box -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Project 1</h3>
+
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            Nama - NIM
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer">
+                            Footer
+                        </div>
+                        <!-- /.card-footer-->
+                    </div>
+                    <!-- /.card -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+<?php
+require_once 'footer.php';
+?>
