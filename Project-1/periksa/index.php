@@ -1,6 +1,10 @@
 <?php
 require_once 'header.php';
 require_once 'sidebar.php';
+
+// Panggil file koneksi database untuk folder periksa
+require '../dbkoneksi.php';
+
 ?>
 
 <!-- Content Wrapper. Contains page content -->
@@ -25,7 +29,7 @@ require_once 'sidebar.php';
                     <!-- Default box -->
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Tabel Pasien</h3>
+                            <h3 class="card-title">Tabel Periksa</h3>
 
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -37,41 +41,38 @@ require_once 'sidebar.php';
                             </div>
                         </div>
                         <div class="card-body">
-                            <h2 class="text-center">Data Pasien</h2>
+                            <h2 class="text-center">Data Periksa</h2>
                             <a href="add.php"><button class="btn btn-primary mb-1">Tambah Data</button></a>
                             <table class="table">
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Kode</th>
-                                        <th>Nama</th>
-                                        <th>Tempat Lahir</th>
-                                        <th>Tanggal Lahir</th>
-                                        <th>Jenis Kelamin</th>
-                                        <th>Email</th>
-                                        <th>Alamat</th>
-                                        <th>Kelurahan ID</th>
+                                        <th>Tanggal</th>
+                                        <th>Berat</th>
+                                        <th>Tinggi</th>
+                                        <th>Tensi</th>
+                                        <th>Keterangan</th>
+                                        <th>ID Pasien</th>
+                                        <th>ID Dokter</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php
-                                    // Panggil file
-                                    require '../dbkoneksi.php';
-                                    // Bikin Query SQL
-                                    $query = $dbh->query("SELECT * FROM pasien");
+                                    // Bikin Query SQL untuk folder periksa
+                                    $query = $dbh->query("SELECT id, tanggal, berat, tinggi, tensi, keterangan, pasien_id, dokter_id FROM periksa");
+
                                     // Tampilkan data looping
                                     foreach ($query as $row) {
                                         echo "<tr>";
                                         echo "<td>" . $row['id'] . "</td>";
-                                        echo "<td>" . $row['kode'] . "</td>";
-                                        echo "<td>" . $row['nama'] . "</td>";
-                                        echo "<td>" . $row['tmp_lahir'] . "</td>";
-                                        echo "<td>" . $row['tgl_lahir'] . "</td>";
-                                        echo "<td>" . $row['gender'] . "</td>";
-                                        echo "<td>" . $row['email'] . "</td>";
-                                        echo "<td>" . $row['alamat'] . "</td>";
-                                        echo "<td>" . $row['kelurahan_id'] . "</td>";
+                                        echo "<td>" . $row['tanggal'] . "</td>";
+                                        echo "<td>" . $row['berat'] . "</td>";
+                                        echo "<td>" . $row['tinggi'] . "</td>";
+                                        echo "<td>" . $row['tensi'] . "</td>";
+                                        echo "<td>" . $row['keterangan'] . "</td>";
+                                        echo "<td>" . $row['pasien_id'] . "</td>"; // Menampilkan ID Pasien
+                                        echo "<td>" . $row['dokter_id'] . "</td>"; // Menampilkan ID Dokter
                                         echo "<td>";
                                         echo "<a href='edit.php?id=" . $row['id'] . "'><button class='btn btn-warning'>Edit</button></a>";
                                         echo "<a href='delete.php?id=" . $row['id'] . "' onclick='return confirm(\"Yakin Hapus Data?\")'><button class='btn btn-danger'>Delete</button></a>";

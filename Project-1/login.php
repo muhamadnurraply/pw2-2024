@@ -14,11 +14,15 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            background-image: url('../Project-1/dist/img/hospital.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;
         }
 
         .container {
-            background-color: #fff;
             border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.5);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             padding: 20px;
             width: 300px;
@@ -62,6 +66,7 @@
 </head>
 
 <?php
+session_start();
 
 if (isset($_POST['submit'])){
     require_once 'dbkoneksi.php';
@@ -78,7 +83,7 @@ if (isset($_POST['submit'])){
 
         $_SESSION['user'] = $user -> fetch();
         // echo "<script>window.location='index.php'</script"; cara JS
-        header("location:index.php");
+        header("location:page.html");
     } else { //jika gagal login
         // echo "script>window.location='login.php'</script>"; Cara JS
         header("location:login.php");

@@ -27,16 +27,18 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="../index.php" class="nav-link">Home</a>
+                    <a href="../page.html" class="nav-link">Home</a>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="../dashboard.php" class="nav-link">Dashboard</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="index.php" class="nav-link">Pasien</a>
+                    <a href="../pasien" class="nav-link">Pasien</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="../dokter" class="nav-link">Dokter</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="../periksa" class="nav-link">Periksa</a>
+                    <a href="index.php" class="nav-link">Periksa</a>
                 </li>
             </ul>
 
