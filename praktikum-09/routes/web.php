@@ -17,4 +17,7 @@ Route::get('/pasien', function () {
 });
 
 Route::get('/admin', [AdminController::class, 'index']);
-Route::get('/admin/pasien', [PasienController::class, 'index']);
+Route::get('/admin/pasien', [PasienController::class, 'index'])->name('pasiens.index');
+Route::get('/admin/pasien/create', [PasienController::class, 'create'])->name('pasiens.create');
+Route::post('/admin/pasien/store', [PasienController::class, 'store'])->name('pasiens.store');
+Route::get('/admin/pasien/{pasien}', [PasienController::class, 'show'])->name('pasiens.show');

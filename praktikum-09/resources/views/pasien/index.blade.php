@@ -39,7 +39,8 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <h1 class="my-4">Daftar Pasien</h1>
+                    <										<h1 class="my-4">Daftar Pasien</h1>
+                    <a href="{{ route('pasiens.create') }}" class="btn btn-primary">Tambah Pasien</a>
                     <table class="table table-bordered">
                         <thead>
                             <tr>
@@ -51,10 +52,11 @@
                                 <th>Gender</th>
                                 <th>Email</th>
                                 <th>Alamat</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($pasien as $pasien)
+                            @foreach ($list_pasien as $pasien)
                                 <tr>
                                     <td>{{ $pasien->id }}</td>
                                     <td>{{ $pasien->kode }}</td>
@@ -64,11 +66,17 @@
                                     <td>{{ $pasien->gender }}</td>
                                     <td>{{ $pasien->email }}</td>
                                     <td>{{ $pasien->alamat }}</td>
+                                    <td>
+                                        <a href="{{ route('pasiens.show', $pasien->id) }}" class="btn btn-info btn-sm">Read</a>
+                                        <a class="btn btn-warning btn-sm">Edit</a>
+                                        <a class="btn btn-danger btn-sm">Delete</a>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
                     </table>
                 </div>
+
                 <!-- /.card-body -->
                 <div class="card-footer">
                     Footer

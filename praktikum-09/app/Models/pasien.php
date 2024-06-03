@@ -21,4 +21,7 @@ class pasien extends Model
         'email',
         'alamat',
     ];
+    
+    // non aktifin timestamp
+    public $timestamp = false;
 }
